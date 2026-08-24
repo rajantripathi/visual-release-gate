@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "name": "ExampleCo Campaign Illustration Gate",
+  "version": "1.0.0-provisional",
+  "description": "A fictional, original benchmark for auditable creative-asset release decisions.",
+  "guide": "policy/guide.md",
+  "rules": "policy/rules.jsonl",
+  "references": "data/references.jsonl",
+  "briefs": "data/briefs.jsonl",
+  "feedback": "data/feedback.jsonl",
+  "labels": "data/labels.jsonl",
+  "review_schema": "contracts/review.schema.json"
+}

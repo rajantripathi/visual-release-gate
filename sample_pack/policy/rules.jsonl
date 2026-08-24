@@ -1,0 +1,5 @@
+{"rule_id":"COLOR-01","title":"Core palette","text":"Use midnight navy, sky blue, warm cream, and coral; other colors remain small supporting accents.","default_severity":"major"}
+{"rule_id":"COLOR-02","title":"Coral hierarchy","text":"Coral is an accent and must not dominate the main subject or background.","default_severity":"major"}
+{"rule_id":"STYLE-01","title":"Flat modular construction","text":"Use crisp flat fills and rounded modular forms. Subtle antialiasing and minor tonal variation are acceptable; decorative or volumetric gradients, photorealistic textures, bevels, gloss, and cast shadows are not.","default_severity":"major"}
+{"rule_id":"POSE-01","title":"Action clarity","text":"Body direction, gaze, hands, weight, and prop contact must make the requested action clearly readable.","default_severity":"major"}
+{"rule_id":"COPY-01","title":"Exact campaign wording","text":"Requested visible copy must be reproduced verbatim and legibly on the specified object.","default_severity":"major"}

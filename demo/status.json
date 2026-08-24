@@ -1,0 +1,12 @@
+{
+  "status": "provisional_preview",
+  "independent_review_complete": false,
+  "live_model_evaluation_complete": false,
+  "safe_to_claim_model_performance": false,
+  "next_actions": [
+    "Collect two blinded reviewer files and adjudicate disagreements.",
+    "Freeze prompt profiles at a commit SHA.",
+    "Run the personal-key experiment under the USD 5 budget cap.",
+    "Replace provisional labels with adjudicated labels and publish actual metrics."
+  ]
+}
