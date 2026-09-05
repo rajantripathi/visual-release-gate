@@ -24,6 +24,11 @@ dependencies = [
 [project.scripts]
 visual-release-gate = "visual_release_gate.cli:main"
 
+[project.optional-dependencies]
+gemini = [
+    "google-genai>=1,<2",
+]
+
 [dependency-groups]
 dev = [
   "pytest>=8.3,<10",

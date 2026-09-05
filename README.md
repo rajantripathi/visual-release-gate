@@ -90,6 +90,27 @@ The conservative budget reserve stops before a call when too little budget
 remains. Provider-internal retries are disabled; application-owned attempts are
 the audit source of truth.
 
+### Alternative provider: Google Gemini (free tier)
+
+The vision provider is pluggable. Pass `--provider gemini` to run against the
+Google AI Studio free tier instead of Runware. Install the extra and supply a
+personal key from <https://aistudio.google.com/apikey>:
+
+```bash
+uv sync --locked --extra gemini
+export GEMINI_API_KEY=...   # or GOOGLE_API_KEY
+
+uv run --locked visual-release-gate review \
+  --provider gemini --max-attempts 5 \
+  --pack ./sample_pack \
+  --output ./.artifacts/reviews.jsonl
+```
+
+The Gemini adapter honours the same contract as the Runware one (env-only
+credentials, application-owned retries, a terminal-failure circuit breaker, and
+structured output validated against the assessment schema). The free tier is
+rate-limited, so raise `--max-attempts` for larger packs.
+
 ## Policy-pack contract
 
 Each pack contains a `pack.json` manifest pointing to:
@@ -118,7 +139,8 @@ See [`docs/evaluation_protocol.md`](docs/evaluation_protocol.md).
 
 ## Security and privacy
 
-- Provider credentials come only from `RUNWARE_API_KEY`.
+- Provider credentials come only from the environment (`RUNWARE_API_KEY`, or
+  `GEMINI_API_KEY`/`GOOGLE_API_KEY` for the Gemini provider).
 - Prompts, image data URIs, and credentials are not written to outputs.
 - Image text, metadata, briefs, and policy prose are treated as untrusted data.
 - The public demo performs no live inference and stores no visitor content.
@@ -130,7 +152,7 @@ See [`docs/threat_model.md`](docs/threat_model.md) and [SECURITY.md](SECURITY.md
 
 - The included data is synthetic and represents one fictional illustration system.
 - Initial labels are author-provisional until independent review is complete.
-- The v0.1 provider surface implements Runware only.
+- The provider surface implements Runware and Google Gemini adapters.
 - Model revisions can change visual judgments despite fixed configuration.
 - A 24-case benchmark demonstrates behavior; it does not establish production accuracy.
 

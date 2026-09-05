@@ -11,9 +11,12 @@ from pathlib import Path
 
 from .batch import run_batch
 from .evaluation import paired_evaluation, read_labels, reviewer_agreement
+from .gemini_provider import DEFAULT_MODEL as GEMINI_DEFAULT_MODEL
+from .gemini_provider import GeminiProvider
 from .io import write_json_atomic
 from .pack import PackError, load_pack
 from .prompts import DEFAULT_PROFILE, SUPPORTED_PROFILES
+from .provider import VisionProvider
 from .runware_provider import DEFAULT_MODEL, RunwareProvider
 
 
@@ -55,12 +58,22 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def _provider_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--provider", choices=("runware", "gemini"), default="runware")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--timeout-seconds", type=int, default=90)
     parser.add_argument("--max-attempts", type=int, choices=range(1, 6), default=3)
 
 
-def _provider(args: argparse.Namespace) -> RunwareProvider:
+def _provider(args: argparse.Namespace) -> VisionProvider:
+    if args.provider == "gemini":
+        # Substitute the Gemini default when the user left --model at the
+        # Runware default (i.e. did not explicitly choose a Gemini model).
+        model = GEMINI_DEFAULT_MODEL if args.model == DEFAULT_MODEL else args.model
+        return GeminiProvider(
+            model=model,
+            timeout_ms=args.timeout_seconds * 1000,
+            max_attempts=args.max_attempts,
+        )
     return RunwareProvider(
         model=args.model,
         timeout_ms=args.timeout_seconds * 1000,
