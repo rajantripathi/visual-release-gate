@@ -43,7 +43,7 @@ No accuracy claim until independent review and live runs are complete.
 - Spends real money only under a hard budget cap
 - 52 tests + CI on every commit
 
-Open source: [REPO_URL]
+Open source: https://github.com/rajantripathi/visual-release-gate
 
 Feedback welcome from multimodal, evaluation, creative-ops, and AI-governance
 teams.

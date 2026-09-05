@@ -52,7 +52,7 @@ These labels are still provisional (mine, not yet independently reviewed), so I'
 making no polished accuracy claim — but building the measurement discipline
 *before* the bragging was the whole point.
 
-It's open source: REPO_URL
+It's open source: https://github.com/rajantripathi/visual-release-gate
 
 I'd genuinely welcome feedback from people working in multimodal ML, model
 evaluation, creative operations, or AI governance — tell me where this breaks.
