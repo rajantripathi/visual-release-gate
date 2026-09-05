@@ -2,10 +2,9 @@
 
 > This is the in-feed text (what people read before clicking). Attach
 > `output/model-vs-labels.png` as the hero visual and (optionally) one Streamlit
-> screenshot for authenticity. Replace `REPO_URL` with the public repo link
-> before posting. The numbers below are real (Gemini 3.6 Flash, free tier) but
-> scoped as provisional against author labels — that honesty is part of the
-> story, not a weakness.
+> screenshot for authenticity. The repo link is filled in below. The numbers are
+> real (Gemini 3.6 Flash, free tier) but scoped as provisional against author
+> labels — that honesty is part of the story, not a weakness.
 
 ---
 
