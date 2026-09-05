@@ -13,7 +13,7 @@ AI-generated creative assets.
 - paired baseline/improved evaluation and reviewer-agreement reporting;
 - original fictional 24-case pack with 8 development and 16 held-out cases;
 - safe precomputed Streamlit benchmark explorer;
-- 44 tests, Ruff gates, locked dependencies, and Python 3.11/3.12 CI;
+- 52 tests, Ruff gates, locked dependencies, and Python 3.11/3.12 CI;
 - Apache-2.0 code and CC-BY-4.0 sample-pack documentation.
 
 ## Evidence status

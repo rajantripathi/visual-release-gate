@@ -36,11 +36,12 @@ request, policy, and authority context.
 
 No accuracy claim until independent review and live runs are complete.
 
-## Slide 5 — Production thinking lives around the model call.
+## Slide 5 — The engineering is around the model, not just the model.
 
-Typed contracts · source-bound citations · deterministic policy · conservative
-budget stop · ordered partial results · retry telemetry · serious-false-approval
-tracking · safe no-upload demo · 44 tests · CI
+- Every decision cites its source — you can trace *why*
+- The demo runs fully offline — no uploads, no secrets
+- Spends real money only under a hard budget cap
+- 52 tests + CI on every commit
 
 Open source: [REPO_URL]
 
